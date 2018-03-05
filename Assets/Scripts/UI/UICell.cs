@@ -8,19 +8,15 @@ public class UICell : MonoBehaviour, IListCell {
 	public Text text;
 
 
-	private int number;
+	//private int number;
 
 
 	public void Init(object data) {
-		number = (int)(long)data;
+		//number = (int)(long)data;
+		text.text = ((long)data).ToString();
 	}
 
-
-
-	void Update() {
-		text.text = number.ToString();
-	}
-
-
-
+	//void Update() {
+		//text.text = number.ToString();
+	//}
 }

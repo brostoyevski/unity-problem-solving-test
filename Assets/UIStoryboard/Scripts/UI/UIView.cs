@@ -69,8 +69,6 @@ namespace UIToolkit.UI {
 
 		}
 			
-
-
 		public void SetVisible(bool isVisible) {
 			camera.enabled = isVisible;
 			foreach (Canvas canvas in canvases) {

@@ -35,8 +35,6 @@ namespace UIToolkit.UI {
 			initialView.SetVisible(true);
 			initialView.ViewAppeared();
 
-
-
 			StartCoroutine(RefreshEventSystem());
 		}
 
@@ -65,10 +63,5 @@ namespace UIToolkit.UI {
 			foreach (UIView view in Views) view.SetResolution(newResolution);
 
 		}
-
-
-
-	
-
 	}
 }

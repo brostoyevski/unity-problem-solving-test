@@ -17,6 +17,7 @@ public class UIList : MonoBehaviour {
 		Clear();
 	}
 
+	GameObject cellCopy;
 
 	public void Populate(ArrayList info, bool extendList = false) {
 
@@ -24,14 +25,15 @@ public class UIList : MonoBehaviour {
 			Clear();
 		}
 
+		/*
 		for (int i=0; i<info.Count; i++) {
-			GameObject cellCopy = Instantiate(cellPrototype) as GameObject;
+			cellCopy = Instantiate(cellPrototype) as GameObject;
 			cells.Add(cellCopy);
 			cellCopy.transform.SetParent(this.transform);
 			cellCopy.transform.localScale = Vector3.one;
 			cellCopy.gameObject.SetActive(true);
 
-			//oif loading cell exist set sibling indext to just before it
+			//if loading cell exist set sibling indext to just before it
 			if (loadingCell != null) {
 				cellCopy.transform.SetSiblingIndex(loadingCell.transform.GetSiblingIndex());
 			}
@@ -39,6 +41,23 @@ public class UIList : MonoBehaviour {
 			IListCell cell = cellCopy.GetComponent(typeof(IListCell)) as IListCell;
 			cell.Init(info[i]);
 		}
+		*/
+	}
+
+	public void PopulateNext(object o){
+		cellCopy = Instantiate(cellPrototype) as GameObject;
+		cells.Add(cellCopy);
+		cellCopy.transform.SetParent(this.transform);
+		cellCopy.transform.localScale = Vector3.one;
+		cellCopy.gameObject.SetActive(true);
+
+		//if loading cell exist set sibling indext to just before it
+		if (loadingCell != null) {
+			cellCopy.transform.SetSiblingIndex(loadingCell.transform.GetSiblingIndex());
+		}
+
+		IListCell cell = cellCopy.GetComponent(typeof(IListCell)) as IListCell;
+		cell.Init(o);
 	}
 
 

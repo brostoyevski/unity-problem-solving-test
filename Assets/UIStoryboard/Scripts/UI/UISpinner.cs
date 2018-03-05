@@ -34,7 +34,5 @@ namespace UIToolkit.UI {
 			animator.SetBool("spinning", false);
 		}
 
-
-
 	}
 }
